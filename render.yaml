@@ -2,11 +2,13 @@ databases:
   - name: redash
     databaseName: redash
     user: redash
+    region: ohio
 
 services:
   # Do not forget to run `render-redash create_db` in Render Shell after creating this service.
   - type: pserv
     name: redash
+    region: ohio
     env: docker
     plan: standard
     dockerCommand: render-redash server
@@ -26,6 +28,7 @@ services:
 
   - type: worker
     name: redash-scheduler
+    region: ohio
     env: docker
     dockerCommand: render-redash scheduler
     autoDeploy: false
@@ -48,6 +51,7 @@ services:
 
   - type: worker
     name: redash-worker
+    region: ohio
     env: docker
     plan: standard
     dockerCommand: render-redash worker
@@ -69,6 +73,7 @@ services:
 
   - type: pserv
     name: redash-redis
+    region: ohio
     env: docker
     repo: https://github.com/render-examples/redis.git
     autoDeploy: false
