@@ -6,7 +6,7 @@ databases:
 
 services:
   # Do not forget to run `render-redash create_db` in Render Shell after creating this service.
-  - type: pserv
+  - type: web
     name: redash
     region: ohio
     env: docker
